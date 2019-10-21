@@ -10,13 +10,12 @@
   #  c) Else, remove digit and try another
  # If all digits have been tried and nothing worked, return false
 
-#Ians liv.py
 
-
+#need to define the thing that solves the sudoku, and basically defines the grid
 def solve(a):
 	for i in range (9)
 	for j in range (9)
-
+#need to define the thing that searches for empty boxes, still working on this
 def findZero (a,1):
 	for row in range (9):
 	for col in range (9):
@@ -27,10 +26,31 @@ def findZero (a,1):
 	return True
 return False
 
+#need to define the thing that sets constraints for unique integers range(9) per row 
+def rowFind(a):
+	for i in range(9), a[1] != a[i+1]
+
+#need to define the thing that sets constraints for unique integers range(9) per col
+def colFind(a):
+	for j in range(9), a[j] != a[j+1]
+#need to define the thing that sets constraints for unique integers range(9) for subboxes
+
+#need to define elif statement for each that will remove integer if its not working. this is the backtracking piece
+
+#need to set up bool if grid is solved then true and if grid cannot be solved then false.
+
+
+
+
+
+
+
 
 
  if i != 0 return True
 	elif return False
+
+#Ians liv.py
 
 a = [ [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
       [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
