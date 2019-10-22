@@ -45,54 +45,46 @@ def usedBox (a, row, col, num)
             if (a [row+1][col+j] === num):
                 return True
         return False
+#check to see if the move is ok, we call this legal
+def legal(a, row, col, num) :
+    return not usedRow(a, row, num) and not usedCol(a, col, num) and not usedBox(a, row-row%3, col-col%3, num)
 
-
-#need to define the thing that sets constraints for unique integers range(9) per row/col/subboxes
-# and set integer and recursivly fill grid
+# and set integer and recursively fill grid (kinda recursive, but not in the way we learned).
 def findFill(a):
-    for i in range(9), a[0] != a[i+1]
-    for j in range(9), a[0] != a[j+1]
-#set up subboxes?
+    t=[0,0]
+    if (not findZero(a,t)):
+        return True
+    row=t[t]
+    col=t[1]
+    for num in range (1, 10, 1):
+        if(legal(a, row, col, num)):
+            a[row][col]= num
+            if findFill(a):
+                return True
+            a[row][col]= 0
+    return False
 
-#need to define the thing that solves the sudoku, this is the MAIN PROGRAM
-
-def rsolve
-    t=[0,0, int]
-#using findZero, check if there are empty things. if there are empty things, return true and keep going
-    if (not(findZero(a,t))):
-        return True;
-#consider digits 1 to 9
-    for t for row in range(9)
-    for t for col in range(9)
-
-
-
-
-
-#need to set up bool if grid is solved then true and if grid cannot be solved then false.
-
-#this is what t is for def findZero the recursive solve function, it tracks which empty cell we are at
-t.append[int, [i, j]]
-
-
-#Ians liv.py
-
-a = [ [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-      [ 0, 0, 0, 0, 0, 0, 0, 0, 0] ]
-
-
-
+#Print function
+ def printPuzzle(a)
 print( "\n +---+---+---+---+---+---+---+---+---+" )
-
 [ print( " |", row[i], end='' ) if i != 8
 else print( " |", row[i], "|\n +---+---+---+---+---+---+---+---+---+" )
 for row in a for i in range (len(row) ) ]
+
+#need to define the thing that solves the sudoku, this is the MAIN PROGRAM
+
+a = [ [ 3, 0, 6, 5, 0, 8, 4, 0, 0],
+      [ 5, 2, 0, 0, 0, 0, 0, 0, 0],
+      [ 0, 8, 7, 0, 0, 0, 0, 3, 1],
+      [ 0, 0, 3, 0, 1, 0, 0, 8, 0],
+      [ 9, 0, 0, 8, 6, 3, 0, 0, 5],
+      [ 0, 5, 0, 0, 9, 0, 6, 0, 0],
+      [ 1, 3, 0, 0, 0, 0, 2, 5, 0],
+      [ 0, 0, 0, 0, 0, 0, 0, 7, 4],
+      [ 0, 0, 5, 2, 0, 6, 3, 0, 0] ]
+
+if (findFill(a)):
+    printPuzzle(a)
+else: print("No Solution Found")
 
  
