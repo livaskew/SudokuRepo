@@ -60,9 +60,9 @@ def findFill(a):
     t=[0,0]
     if (not findZero(a,t)):
         return True
-    row=t[t]
+    row=t[0]
     col=t[1]
-    for num in range (1, 10, 1):
+    for n in range (1, 10, 1):
         if(legal(a, row, col, n)):
             a[row][col]= n
             if findFill(a):
@@ -84,13 +84,12 @@ if __name__ == "__main__":
     [0, 0, 0, 0, 0, 0, 0, 7, 4],
     [0, 0, 5, 2, 0, 6, 3, 0, 0]]
 
-if findFill(a):
+if (findFill(a)):
     print("\n +---+---+---+---+---+---+---+---+---+")
     [print(" |", row[i], end='') if i != 8
-         else print(" |", row[i], "|\n +---+---+---+---+---+---+---+---+---+")
+        else print(" |", row[i], "|\n +---+---+---+---+---+---+---+---+---+")
             for row in a for i in range (len(row) )]
-else:
-    print("No Solution Found")
+
 
 
 
