@@ -1,14 +1,19 @@
-#basic idea:
 
-#https://www.geeksforgeeks.org/sudoku-backtracking-7/
-# Find row, col of an unassigned cell
- # If there is none, return true
-  #For digits from 1 to 9
-   # a) If there is no conflict for digit at row, col
-    #    assign digit to row, col and recursively try fill in rest of grid
-   # b) If recursion successful, return true
-  #  c) Else, remove digit and try another
- # If all digits have been tried and nothing worked, return false
+
+# the idea: in a 9x9 grid, find unassigned spots, which are 0's.
+# when 0 is located, computer checks for legal moves and fills in 0 with a number 1 to 9
+# if there are no legal moves, computer sets cell back to 0 and backtracks to the last cell it assigned, and tries again
+# repeats this until grid is solved
+
+
+# all code was inspired by the C and Java code on this link. https://www.geeksforgeeks.org/sudoku-backtracking-7/
+# after getting my program written, I used the python code to help me with syntax errors. This lead to me adopting
+# much of the structure on the website, so they are very similar.
+
+# as of right now, the program attempts to compile but reaches a recursion limit, and so no solution has yet been
+# found. This means with the help of the internet I was able to troubleshoot all of my syntax errors and learn from
+# them, but I have yet to figure out the recursion problem.
+
 
 
 # need to define the thing that searches for empty boxes, still working on this
